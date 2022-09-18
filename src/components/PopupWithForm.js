@@ -1,29 +1,24 @@
 import React from 'react';
 
-class PopupWithForm extends React.Component {
-    constructor(props) {
-        super(props);
-    };
+function PopupWithForm(props) {
 
-    render() {
+    return (
 
-        return (
-            <>
-                <div className={
-                    this.props.isOpen
-                        ? `popup popup_type_${this.props.name} popup_open`
-                        : `popup popup_type_${this.props.name} `
-                }
-                >
-                    <form name={this.props.name} className="popup__container popup__form" noValidate>
-                        <button type="button" className="popup__close-icon" onClick={this.props.onClose}></button>
-                        <h2 className="popup__container-heading">{this.props.title}</h2>
-                        {this.props.children}
-                        <button type="submit" className="popup__button popup__container-save-button">{this.props.buttonName}</button>
-                    </form>
-                </div>
-            </>
-        );
-    }
+        <div className={
+            props.isOpen
+                ? `popup popup_type_${props.name} popup_open`
+                : `popup popup_type_${props.name} `
+        }
+        >
+            <form name={props.name} className="popup__container popup__form">
+                <button type="button" className="popup__close-icon" onClick={props.onClose}></button>
+                <h2 className="popup__container-heading">{props.title}</h2>
+                {props.children}
+                <button type="submit" className="popup__button popup__container-save-button">{props.buttonName}</button>
+            </form>
+        </div>
+
+    );
 }
+
 export default PopupWithForm;
