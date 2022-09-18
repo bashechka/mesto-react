@@ -13,7 +13,6 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState({});
   const [isImagePopupOpen, setIsImagePopupOpen] = React.useState(false);
 
-
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
   };
@@ -32,8 +31,6 @@ function App() {
     setIsEditProfilePopupOpen(false);
     setIsImagePopupOpen(false);
     setSelectedCard({});
-   
-
   }
 
   function handleCardClick(card) {
@@ -41,16 +38,15 @@ function App() {
     setIsImagePopupOpen(true);
   }
 
-
   return (
     <div className="page">
 
       <ImagePopup
         name="open-pic"
         card={selectedCard}
-        onClose={closeAllPopups} 
+        onClose={closeAllPopups}
         isOpen={isImagePopupOpen}
-        />
+      />
 
       <PopupWithForm
         name="update-avatar"
@@ -58,14 +54,13 @@ function App() {
         buttonName="Сохранить"
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}
-        children={
-          <fieldset className="popup__container-inputs">
-            <input type="url" id="popup__container_avatar-link" name="form__item-avatar-link" placeholder="Ссылка на аватар"
-              className="popup__container-input popup__container-input_type_avatar-link" defaultValue="" required></input>
-            <span className="popup__container popup__container_avatar-link-error"></span>
-          </fieldset>
-        }
-      />
+      >
+        <fieldset className="popup__container-inputs">
+          <input type="url" id="popup__container_avatar-link" name="form__item-avatar-link" placeholder="Ссылка на аватар"
+            className="popup__container-input popup__container-input_type_avatar-link" defaultValue="" required></input>
+          <span className="popup__container popup__container_avatar-link-error"></span>
+        </fieldset>
+      </PopupWithForm>
 
       <PopupWithForm
         name="update-profile"
@@ -73,19 +68,18 @@ function App() {
         buttonName="Сохранить"
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
-        children={
-          <fieldset className="popup__container-inputs">
-            <input type="text" id="popup__container_name" name="form__item-name" placeholder="Имя"
-              className="popup__container-input popup__container-input_type_name" defaultValue="Жак-Ив Кусто" minLength="2"
-              maxLength="40" required></input>
-            <span className="popup__container popup__container_name-error"></span>
-            <input type="text" id="popup__container_job" name="form__item-job" placeholder="О себе"
-              className="popup__container-input popup__container-input_type_job" defaultValue="Исследователь океана" minLength="2"
-              maxLength="200" required></input>
-            <span className="popup__container popup__container_job-error"></span>
-          </fieldset>
-        }
-      />
+      >
+        <fieldset className="popup__container-inputs">
+          <input type="text" id="popup__container_name" name="form__item-name" placeholder="Имя"
+            className="popup__container-input popup__container-input_type_name" defaultValue="Жак-Ив Кусто" minLength="2"
+            maxLength="40" required></input>
+          <span className="popup__container popup__container_name-error"></span>
+          <input type="text" id="popup__container_job" name="form__item-job" placeholder="О себе"
+            className="popup__container-input popup__container-input_type_job" defaultValue="Исследователь океана" minLength="2"
+            maxLength="200" required></input>
+          <span className="popup__container popup__container_job-error"></span>
+        </fieldset>
+      </PopupWithForm>
 
       <PopupWithForm
         name="add-pic"
@@ -93,25 +87,23 @@ function App() {
         buttonName="Создать"
         isOpen={isAddPlacePopupOpen}
         onClose={closeAllPopups}
-        children={
-          <fieldset className="popup__container-inputs">
-            <input type="text" id="popup__container_place" name="form__item-place" placeholder="Название"
-              className="popup__container-input popup__container-input_type_place" defaultValue="" minLength="2" maxLength="30"
-              required></input>
-            <span className="popup__container popup__container_place-error"></span>
-            <input type="url" id="popup__container_link" name="form__item-link" placeholder="Ссылка на картинку"
-              className="popup__container-input popup__container-input_type_link" defaultValue="" required></input>
-            <span className="popup__container popup__container_link-error"></span>
-          </fieldset>
-        }
-      />
+      >
+        <fieldset className="popup__container-inputs">
+          <input type="text" id="popup__container_place" name="form__item-place" placeholder="Название"
+            className="popup__container-input popup__container-input_type_place" defaultValue="" minLength="2" maxLength="30"
+            required></input>
+          <span className="popup__container popup__container_place-error"></span>
+          <input type="url" id="popup__container_link" name="form__item-link" placeholder="Ссылка на картинку"
+            className="popup__container-input popup__container-input_type_link" defaultValue="" required></input>
+          <span className="popup__container popup__container_link-error"></span>
+        </fieldset>
+      </PopupWithForm>
 
       <PopupWithForm
         name="delete"
         title="Вы уверены?"
         buttonName="Да"
       />
-
       <Header />
       <Main
         onEditProfile={handleEditProfileClick}
