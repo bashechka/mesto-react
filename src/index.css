@@ -61,7 +61,8 @@
 @import url(./blocks/photo/__like-button/_active/photo__like-button_active.css);
 @import url(./blocks/photo/__like-count/photo__like-count.css);
 @import url(./blocks/photo/__delete-button/photo__delete-button.css);
-@import url(./blocks/photo/__delete-button/_active/photo__delete-button_active.css);
+@import url(./blocks/photo/__delete-button/_visible/photo__delete-button_visible.css);
+@import url(./blocks/photo/__delete-button/_hidden/photo__delete-button_hidden.css);
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__text/footer__text.css);

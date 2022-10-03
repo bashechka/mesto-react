@@ -19,28 +19,30 @@ class Api {
     return this._checkResponse(promise);
   }
 
-  updateUserInfo(name, about) {
+  updateUserInfo(userData) {
     const promise = fetch(`${this._options.baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this._options.headers,
-      body: JSON.stringify({
-        name: name,
-        about: about
-      })
+      body: JSON.stringify(userData)
     })
     return this._checkResponse(promise);
   }
 
-  createNewCard(name, link) {
+  createNewCard(data) {
     const promise = fetch(`${this._options.baseUrl}/cards`, {
       method: 'POST',
       headers: this._options.headers,
-      body: JSON.stringify({
-        name: name,
-        link: link
-      })
+      body: JSON.stringify(data)
     })
     return this._checkResponse(promise);
+  }
+
+  changeLikeStatus(cardId, isLiked) {
+    if (isLiked) {
+      return this.setLike(cardId);
+    } else {
+      return this.deleteLike(cardId);
+    }
   }
 
   setLike(cardId) {
