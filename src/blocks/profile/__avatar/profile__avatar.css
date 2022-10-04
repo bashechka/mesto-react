@@ -6,9 +6,5 @@
   background-size: cover;
   padding: 0;
   margin: 0;
+  object-fit: cover;
 }
-
-/* .profile__avatar:hover {
-  transition: opacity .3s;
-  opacity: .4;
-} */

@@ -53,7 +53,7 @@ function EditProfilePopup(props) {
           className="popup__container-input popup__container-input_type_name"
           minLength="2"
           maxLength="40"
-          defaultValue={name}
+          value={name}
           required />
 
         <span className="popup__container popup__container_name-error"></span>
@@ -64,7 +64,7 @@ function EditProfilePopup(props) {
           name="form__item-job"
           placeholder="О себе"
           className="popup__container-input popup__container-input_type_job"
-          defaultValue={description}
+          value={description}
           minLength="2"
           maxLength="200"
           required />
