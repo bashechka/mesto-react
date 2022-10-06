@@ -13,6 +13,7 @@
   border: 0;
   margin: 1px 0 37px 0;
   padding: 0;
+  cursor: pointer;
 }
 
 .popup__container-confirm-button:hover {

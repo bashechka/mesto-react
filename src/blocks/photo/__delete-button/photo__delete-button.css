@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     background-color: transparent;
-    /* visibility: visible; */
+    cursor: pointer;
 }
   .photo__delete-button:hover {
     opacity: .5;
